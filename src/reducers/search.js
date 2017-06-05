@@ -4,6 +4,14 @@ const DEFAULT_STATE = {
     term: ''
 }
 
+const orderTracksByMostPopular = (a, b) => {
+    if (a.popularity < b.popularity)
+        return 1;
+    if (a.popularity > b.popularity)
+        return -1;
+    return 0;
+}
+
 const setSearchTerm = (state, action) => {
   const newState = {}
   Object.assign(newState, state, {term: action.searchTerm})
@@ -11,16 +19,12 @@ const setSearchTerm = (state, action) => {
 }
 
 const setArtistTopTracks = (state, action) => {
-    console.log('setting new artist top track state')
   const newState = {}
-  console.log(state)
-  Object.assign(newState, state, { topTracks: state})
-  console.log(newState)
+  Object.assign(newState, state, { topTracks: action.tracks.tracks.sort(orderTracksByMostPopular)})
   return newState
 }
 
 const search = (state = DEFAULT_STATE, action) => {
-    console.log(action)
   switch (action.type) {
     case SET_SEARCH_TERM:
       return setSearchTerm(state, action)
