@@ -7,7 +7,7 @@ const SearchLayout = (props) => {
     
     return (
         <div className="Search">
-            <pre><code>{JSON.stringify(props, null, 4)}</code></pre>
+            {/*<pre><code>{JSON.stringify(props, null, 4)}</code></pre>*/}
             <form onSubmit={(e) => {
                     e.preventDefault()
                     if (!input.value.trim()) {
@@ -24,7 +24,9 @@ const SearchLayout = (props) => {
                     />
                 <input type='submit' value='submit' />
             </form>
-            <h1>Search Term is: {search.term}</h1>
+            <div>
+                Results:
+            </div>
         </div>
     )
   }
