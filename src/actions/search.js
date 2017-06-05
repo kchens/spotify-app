@@ -32,8 +32,7 @@ const getAndSetArtistTopTracks = (searchTerm) => {
     return (dispatch) => {
         const defaultCountryId = 'US';
         const spotifyApi = new SpotifyApi();
-        let topArtistTracks;
-        spotifyApi.setAccessToken("BQAHr-FVpMSo3FNi268nd2EIQZSznGYObXCk9ThcYpy6TMX6-wSefHzIRcUjgCv5w0gkHlDDar5kB1C-ALdHTg");
+        spotifyApi.setAccessToken("BQBIewohXjNJVz8uwD6VukT6WPu3DKo_K3tk3IhnRKZJfFyw_allIoeaBBEvP2EkiI0lWFSZJ2N9bB4drBIXwg");
         
         return spotifyApi.searchArtists(searchTerm, {limit: 1})
             .then((data) => {
