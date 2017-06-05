@@ -14,6 +14,7 @@ const parseArtistId = (data) => {
 }
 
 const getAndSetArtistTopTracks = (searchTerm) => {
+    // Figure out how to implement later
     // curl -H "Authorization: Basic ZWRlYzg3MmQ4NzRkNGYwNmI5ZDQyYTVhZjQzM2I2MWM6NjdjYTYxMjk2MzllNDVhNjhiODNmNDQ0NDlhOWIwZDU=" -d grant_type=client_credentials https://accounts.spotify.com/api/token
     // fetch('https://accounts.spotify.com/api/token', { 
     //     method: 'post', 

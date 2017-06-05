@@ -1,8 +1,8 @@
 import React from 'react';
+import Results from '../Results';
 
 const SearchLayout = (props) => {
     const { onSearch, search } = props
-    console.log(props)
     let input
     
     return (
@@ -24,9 +24,7 @@ const SearchLayout = (props) => {
                     />
                 <input type='submit' value='submit' />
             </form>
-            <div>
-                Results:
-            </div>
+            <Results topTracks={search.topTracks} />            
         </div>
     )
   }
